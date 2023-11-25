@@ -42,6 +42,21 @@
   </div>
 
   <div>
+    <%= form.label :state_id, style: "display: block" %>
+    <%= form.text_field :state_id %>
+  </div>
+
+  <div>
+    <%= form.label :country_id, style: "display: block" %>
+    <%= form.text_field :country_id %>
+  </div>
+
+  <div>
+    <%= form.label :city_id, style: "display: block" %>
+    <%= form.text_field :city_id %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

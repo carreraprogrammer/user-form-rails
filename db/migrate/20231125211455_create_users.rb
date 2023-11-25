@@ -7,6 +7,9 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :email
       t.references :gender, null: false, foreign_key: true
       t.references :address, null: false, foreign_key: true
+      t.references :state, null: false, foreign_key: true
+      t.references :country, null: false, foreign_key: true
+      t.references :city, null: false, foreign_key: true
 
       t.timestamps
     end

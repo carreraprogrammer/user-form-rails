@@ -16,10 +16,13 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "Address", with: @user.address_id
     fill_in "Birth date", with: @user.birth_date
+    fill_in "City", with: @user.city_id
+    fill_in "Country", with: @user.country_id
     fill_in "Email", with: @user.email
     fill_in "First name", with: @user.first_name
     fill_in "Gender", with: @user.gender_id
     fill_in "Last name", with: @user.last_name
+    fill_in "State", with: @user.state_id
     click_on "Create User"
 
     assert_text "User was successfully created"
@@ -32,10 +35,13 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "Address", with: @user.address_id
     fill_in "Birth date", with: @user.birth_date
+    fill_in "City", with: @user.city_id
+    fill_in "Country", with: @user.country_id
     fill_in "Email", with: @user.email
     fill_in "First name", with: @user.first_name
     fill_in "Gender", with: @user.gender_id
     fill_in "Last name", with: @user.last_name
+    fill_in "State", with: @user.state_id
     click_on "Update User"
 
     assert_text "User was successfully updated"

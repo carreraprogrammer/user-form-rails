@@ -7,6 +7,9 @@ one:
   email: MyString
   gender: one
   address: one
+  state: one
+  country: one
+  city: one
 
 two:
   first_name: MyString
@@ -15,3 +18,6 @@ two:
   email: MyString
   gender: two
   address: two
+  state: two
+  country: two
+  city: two
