@@ -9,6 +9,8 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :house_or_apartment
       t.belongs_to :gender, null: false, foreign_key: true
       t.belongs_to :city, null: false, foreign_key: true
+      t.belongs_to :country, null: false, foreign_key: true
+      t.belongs_to :state, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   belongs_to :gender
   belongs_to :city, counter_cache: true
+  belongs_to :country
+  belongs_to :state
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -10,6 +12,8 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :house_or_apartment, presence: true
   validates :city_id, presence: true
+  validates :country_id, presence: true
+  validates :state_id, presence: true
   validates :gender_id, presence: true
   validate :must_be_over_18
   validate :maximum_three_users_per_city, { unless: -> { city.nil? } }
@@ -25,4 +29,6 @@ class User < ApplicationRecord
       errors.add(:city, 'La ciudad ya tiene 3 usuarios registrados')
     end
   end
+
+  private
 end

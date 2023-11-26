@@ -39,7 +39,7 @@ RSpec.describe User, type: :model do
     it 'is invalid with a birth date less than 18 years ago' do
       subject.birth_date = 17.years.ago.to_date
       expect(subject.valid?).to be false
-      expect(subject.errors[:birth_date]).to include('You must be over 18 years old to register.')
+      expect(subject.errors[:birth_date]).to include('Debes ser mayor de 18 años')
     end
 
     it 'is valid with a birth date more than 18 years ago' do
@@ -80,7 +80,7 @@ RSpec.describe User, type: :model do
         country: country
       )
       expect(new_user.valid?).to be false
-      expect(new_user.errors[:city]).to include('Cannot register more than three users from the same city.')
+      expect(new_user.errors[:city]).to include('La ciudad ya tiene 3 usuarios registrados')  
     end
   end
 end

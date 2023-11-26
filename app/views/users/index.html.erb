@@ -1,21 +1,21 @@
 <h1>Users</h1>
 
-<%= link_to "users PDF", users_path(format: :pdf)%>
+<%= link_to "Crear PDF de usuarios", users_path(format: :pdf), class: "pdf-btn"%>
 
 <table class="user-info-table">
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Birth date</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Nacimiento</th>
       <th>Email</th>
-      <th>Address</th>
-      <th>House or Apartment</th>
-      <th>Gender</th>
-      <th>City</th>
-      <th>Country</th>
-      <th>State</th>
-      <th>Actions</th>
+      <th>Dirección</th>
+      <th>Casa/Apartamento</th>
+      <th>Sexo</th>
+      <th>Ciudad</th>
+      <th>Pais</th>
+      <th>Departamento</th>
+      <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -25,4 +25,4 @@
   </tbody>
 </table>
 
-<%= link_to "New user", new_user_path %>
+<%= link_to "New user", new_user_path, class: "btn btn-primary new-user" %>

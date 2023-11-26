@@ -40,6 +40,8 @@ city = City.find_by(name: 'Medellín')
     house_or_apartment: "House",
     gender: Gender.first,
     city: city,
+    country: colombia,
+    state: State.find_by(name: 'Antioquia')
   )
 end
 

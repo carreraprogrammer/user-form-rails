@@ -11,7 +11,10 @@
   </head>
 
   <body>
-    <p style="color: green" class="notice"><%= notice %></p>
+    <%= render 'shared/navbar' %>
+    <% if flash[:notice].present? %>
+      <p style="color: green" class="notice"><%= flash[:notice] %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

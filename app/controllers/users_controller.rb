@@ -69,7 +69,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+      flash[:notice] = "User was successfully destroyed."
       format.json { head :no_content }
     end
   end
@@ -82,6 +82,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :birth_date, :email, :address, :house_or_apartment, :gender_id, :city_id)
+      params.require(:user).permit(:first_name, :last_name, :birth_date, :email, :address, :house_or_apartment, :gender_id, :city_id, :country_id, :state_id)
     end
 end
