@@ -4,7 +4,7 @@ class CitiesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json
+      format.json { render json: @cities }
       format.pdf do
         render pdf: "file_name", template: "cities/index", formats: [:html], layout: "pdf", orientation: 'Landscape'
       end
