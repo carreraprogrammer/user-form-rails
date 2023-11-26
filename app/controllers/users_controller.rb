@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       format.html
       format.json { render json: @user }
       format.pdf do
-        render pdf: "#{user.first_name} information", template: "users/show", formats: [:html], layout: "pdf", orientation: 'Landscape'
+        render pdf: "#{user.first_name} information", template: "users/user", formats: [:html], layout: "pdf", orientation: 'Landscape'
       end
     end
   end

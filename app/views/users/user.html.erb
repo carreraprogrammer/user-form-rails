@@ -1,6 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
 <h1><%= @user.first_name + ' ' + @user.last_name %></h1>
+<p>
+  PDF generated
+  <%= Time.zone.now %>
+</p>
+
 <table>
   <thead>
     <tr>
@@ -18,13 +21,6 @@
     </tr>
   </thead>
   <tr>
-    <%= render @user %>
+    <%= render 'user_pdf', user: @user %>
   </tr>
 </table>
-
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back", 'javascript:history.back()' %>
-
-  <%= button_to "Destroy this user", @user, method: :delete %>
-</div>
