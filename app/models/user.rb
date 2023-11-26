@@ -16,7 +16,7 @@ class User < ApplicationRecord
   validates :state_id, presence: true
   validates :gender_id, presence: true
   validate :must_be_over_18
-  validate :maximum_three_users_per_city, { unless: -> { city.nil? } }
+  validate :maximum_three_users_per_city, on: :create, unless: -> { city.nil? }
 
   def must_be_over_18
     if birth_date.present? && birth_date > 18.years.ago.to_date
