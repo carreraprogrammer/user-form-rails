@@ -1,8 +1,9 @@
-<p style="color: green"><%= notice %></p>
+<h1>Usuarios en <%= @city.name %></h1>
 
-<h1>Users</h1>
-
-<%= link_to "users PDF", users_path(format: :pdf)%>
+<p>
+  PDF generated
+  <%= Time.zone.now %>
+</p>
 
 <table class="user-info-table">
   <thead>
@@ -17,14 +18,11 @@
       <th>City</th>
       <th>Country</th>
       <th>State</th>
-      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <% @users.each do |user| %>
-      <%= render user %>
-    <% end %>
+  <% @users.each do |user| %>
+    <%= render 'users/user_pdf', user: user %>
+  <% end %>
   </tbody>
 </table>
-
-<%= link_to "New user", new_user_path %>

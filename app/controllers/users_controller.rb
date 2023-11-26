@@ -4,10 +4,24 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @users = User.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "file_name", template: "users/users", formats: [:html], layout: "pdf"
+      end
+    end
   end
 
   # GET /users/1 or /users/1.json
   def show
+    user = User.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "#{user.first_name} information", template: "users/show", formats: [:html], layout: "pdf"
+      end
+    end
   end
 
   # GET /users/new
