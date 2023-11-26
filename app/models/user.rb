@@ -9,6 +9,11 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :birth_date, presence: true
   validates :address, presence: true
+  validates :house_or_apartment, presence: true
+  validates :country_id, presence: true
+  validates :state_id, presence: true
+  validates :city_id, presence: true
+  validates :gender_id, presence: true
   validate :must_be_over_18
   validate :maximum_three_users_per_city, { unless: -> { city.nil? } }
 

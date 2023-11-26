@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root "cities#index"
-  resources :users
+  root "users#new"
+  resources :users, only: [:new, :create, :edit, :update, :destroy]
   resources :cities, only: [:index, :show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
