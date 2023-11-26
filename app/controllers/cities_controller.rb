@@ -4,7 +4,7 @@ class CitiesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "file_name", template: "cities/index", formats: [:html], layout: "pdf"
+        render pdf: "file_name", template: "cities/index", formats: [:html], layout: "pdf", orientation: 'Landscape'
       end
     end
   end
@@ -15,7 +15,7 @@ class CitiesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "Users in #{@city_name}", template: "cities/city", formats: [:html], layout: "pdf"
+        render pdf: "Users in #{@city_name}", template: "cities/city", formats: [:html], layout: "pdf", orientation: 'Landscape'
       end
     end
   end

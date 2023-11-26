@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "file_name", template: "users/users", formats: [:html], layout: "pdf"
+        render pdf: "file_name", template: "users/users", formats: [:html], layout: "pdf", orientation: 'Landscape'
       end
     end
   end
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "#{user.first_name} information", template: "users/show", formats: [:html], layout: "pdf"
+        render pdf: "#{user.first_name} information", template: "users/show", formats: [:html], layout: "pdf", orientation: 'Landscape'
       end
     end
   end
