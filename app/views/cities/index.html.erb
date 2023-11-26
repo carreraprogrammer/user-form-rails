@@ -1,0 +1,27 @@
+<!-- app/views/cities/index.html.erb -->
+<h1 class="page-title">Ciudades</h1>
+
+<table class="user-info-table">
+  <thead>
+    <tr>
+      <th>Ciudad</th>
+      <th>Número de Usuarios</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cities.each do |city| %>
+      <tr>
+        <td><%= link_to city.name, city %></td>
+        <td><%= city.user_count %></td>
+        <td>
+          <%= link_to "PDF", city_path(city, format: :pdf)%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "see all users", users_path, class: "btn btn-primary new-user"  %>
+
+<%= link_to "Back", 'javascript:history.back()', class: "back-btn" %>

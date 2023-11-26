@@ -1,0 +1,27 @@
+<h1>Usuarios en <%= @city.name %></h1>
+
+<table class="user-info-table">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Birth date</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>House or Apartment</th>
+      <th>Gender</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>State</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @city.users.each do |user| %>
+    <%= render 'users/user', user: user %>
+  <% end %>
+  </tbody>
+</table>
+</ul>
+
+<%= link_to "Back", 'javascript:history.back()', class: "back-btn" %>

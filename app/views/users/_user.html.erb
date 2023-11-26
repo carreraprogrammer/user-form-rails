@@ -1,0 +1,17 @@
+<tr id="<%= dom_id(user) %>">
+  <td><%= user.first_name %></td>
+  <td><%= user.last_name %></td>
+  <td><%= user.birth_date %></td>
+  <td><%= user.email %></td>
+  <td><%= user.address %></td>
+  <td><%= user.house_or_apartment %></td>
+  <td><%= user.gender.description %></td>
+  <td><%= user.city.name %></td> 
+  <td><%= user.city.state.country.name %></td>
+  <td><%= user.city.state.name %></td>
+  <td class="actions-container">
+    <%= link_to "Edit", edit_user_path(user), class: 'edit-button' %> |
+    <%= link_to "PDF", user_path(user, format: :pdf), class: 'pdf-button'%> |
+    <%= button_to "X", user, method: :delete, class: 'delete-button', data: { confirm: '¿Estás seguro de que deseas eliminar este usuario?' } %>
+  </td>
+</tr>
