@@ -1,9 +1,12 @@
-<h1>New user</h1>
+<h1 class="contact-form-title">FORMULARIO DE CONTACTO</h1>
 
-<%= render "form", user: @user %>
+<div class="add-user-container">
+  <div class="social-media-container">
+
+  </div>
+  <div class="user-form-container">
+    <%= render "form", user: @user %>
+  </div>
+</div>
 
 <br>
-
-<div>
-  <%= link_to "Back to users", users_path %>
-</div>

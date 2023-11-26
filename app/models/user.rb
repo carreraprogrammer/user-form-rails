@@ -20,13 +20,13 @@ class User < ApplicationRecord
 
   def must_be_over_18
     if birth_date.present? && birth_date > 18.years.ago.to_date
-      errors.add(:birth_date, 'You must be over 18 years old to register.')
+      errors.add(:birth_date, 'Debes ser mayor de 18 años')
     end
   end
 
   def maximum_three_users_per_city
     if city.users_count >= 3
-      errors.add(:city, 'Cannot register more than three users from the same city.')
+      errors.add(:city, 'La ciudad ya tiene 3 usuarios registrados')
     end
   end
 end

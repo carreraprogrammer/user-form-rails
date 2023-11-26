@@ -1,5 +1,5 @@
-<h1><%= @city.name %></h1>
-<h2>Usuarios en esta ciudad:</h2>
+<h1>Usuarios en <%= @city.name %></h1>
+
 <table class="user-info-table">
   <thead>
     <tr>
@@ -24,4 +24,4 @@
 </table>
 </ul>
 
-<%= link_to "Back", 'javascript:history.back()' %>
+<%= link_to "Back", 'javascript:history.back()', class: "back-btn" %>
