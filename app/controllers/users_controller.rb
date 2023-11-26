@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.json { render json: @users }
       format.pdf do
         render pdf: "file_name", template: "users/users", formats: [:html], layout: "pdf", orientation: 'Landscape'
       end
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.json { render json: @user }
       format.pdf do
         render pdf: "#{user.first_name} information", template: "users/show", formats: [:html], layout: "pdf", orientation: 'Landscape'
       end
