@@ -1,47 +1,16 @@
-<div id="<%= dom_id user %>">
-  <p>
-    <strong>First name:</strong>
-    <%= user.first_name %>
-  </p>
-
-  <p>
-    <strong>Last name:</strong>
-    <%= user.last_name %>
-  </p>
-
-  <p>
-    <strong>Birth date:</strong>
-    <%= user.birth_date %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= user.email %>
-  </p>
-
-  <p>
-    <strong>Gender:</strong>
-    <%= user.gender_id %>
-  </p>
-
-  <p>
-    <strong>Address:</strong>
-    <%= user.address_id %>
-  </p>
-
-  <p>
-    <strong>State:</strong>
-    <%= user.state_id %>
-  </p>
-
-  <p>
-    <strong>Country:</strong>
-    <%= user.country_id %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= user.city_id %>
-  </p>
-
-</div>
+<tr id="<%= dom_id(user) %>">
+  <td><%= user.first_name %></td>
+  <td><%= user.last_name %></td>
+  <td><%= user.birth_date %></td>
+  <td><%= user.email %></td>
+  <td><%= user.address %></td>
+  <td><%= user.house_or_apartment %></td>
+  <td><%= user.gender.description %></td> <!-- Aquí deberías mostrar el texto asociado al ID -->
+  <td><%= user.city.name %></td> <!-- Aquí deberías mostrar el nombre de la ciudad asociada al ID -->
+  <td><%= user.country.name %></td> <!-- Aquí deberías mostrar el nombre del país asociado al ID -->
+  <td><%= user.state.name %></td> <!-- Aquí deberías mostrar el nombre del estado asociado al ID -->
+  <td>
+    <%= link_to 'Show', user %>
+    <%= link_to "Destroy this user", user, method: :delete %>
+  </td>
+</tr>

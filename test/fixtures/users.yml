@@ -5,19 +5,21 @@ one:
   last_name: MyString
   birth_date: 2023-11-25
   email: MyString
+  address: MyString
+  house_or_apartment: MyString
   gender: one
-  address: one
-  state: one
-  country: one
   city: one
+  country: one
+  state: one
 
 two:
   first_name: MyString
   last_name: MyString
   birth_date: 2023-11-25
   email: MyString
+  address: MyString
+  house_or_apartment: MyString
   gender: two
-  address: two
-  state: two
-  country: two
   city: two
+  country: two
+  state: two

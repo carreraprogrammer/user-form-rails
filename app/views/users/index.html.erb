@@ -2,13 +2,27 @@
 
 <h1>Users</h1>
 
-<div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
-  <% end %>
-</div>
+<table class="user-info-table">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Birth date</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>House or Apartment</th>
+      <th>Gender</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>State</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <%= render user %>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to "New user", new_user_path %>

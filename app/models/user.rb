@@ -1,16 +1,16 @@
 class User < ApplicationRecord
   belongs_to :gender
-  belongs_to :address
-  belongs_to :state
-  belongs_to :country
   belongs_to :city, counter_cache: true
+  belongs_to :country
+  belongs_to :state
 
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :birth_date, presence: true
+  validates :address, presence: true
   validate :must_be_over_18
-  validate :maximum_three_users_per_city
+  validate :maximum_three_users_per_city, { unless: -> { city.nil? } }
 
   def must_be_over_18
     if birth_date.present? && birth_date > 18.years.ago.to_date

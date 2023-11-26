@@ -10,18 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_25_214126) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_25_225503) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "addresses", force: :cascade do |t|
-    t.string "address"
-    t.string "house_or_apartment"
-    t.bigint "city_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["city_id"], name: "index_addresses_on_city_id"
-  end
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -57,24 +48,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_25_214126) do
     t.string "last_name"
     t.date "birth_date"
     t.string "email"
+    t.string "address"
+    t.string "house_or_apartment"
     t.bigint "gender_id", null: false
-    t.bigint "address_id", null: false
-    t.bigint "state_id", null: false
-    t.bigint "country_id", null: false
     t.bigint "city_id", null: false
+    t.bigint "country_id", null: false
+    t.bigint "state_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["address_id"], name: "index_users_on_address_id"
     t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["country_id"], name: "index_users_on_country_id"
     t.index ["gender_id"], name: "index_users_on_gender_id"
     t.index ["state_id"], name: "index_users_on_state_id"
   end
 
-  add_foreign_key "addresses", "cities"
   add_foreign_key "cities", "states"
   add_foreign_key "states", "countries"
-  add_foreign_key "users", "addresses"
   add_foreign_key "users", "cities"
   add_foreign_key "users", "countries"
   add_foreign_key "users", "genders"

@@ -33,27 +33,28 @@
 
   <div>
     <%= form.label :gender_id, style: "display: block" %>
-    <%= form.text_field :gender_id %>
+    <%= form.collection_select :gender_id, Gender.order(:description), :id, :description, include_blank: true %>
   </div>
 
+
   <div>
-    <%= form.label :address_id, style: "display: block" %>
-    <%= form.text_field :address_id %>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+    <div>
+    <%= form.label :country_id, style: "display: block" %>
+    <%= form.collection_select :country_id, Country.order(:name), :id, :name, include_blank: true, id: 'country_select' %>
   </div>
 
   <div>
     <%= form.label :state_id, style: "display: block" %>
-    <%= form.text_field :state_id %>
-  </div>
-
-  <div>
-    <%= form.label :country_id, style: "display: block" %>
-    <%= form.text_field :country_id %>
+    <%= form.collection_select :state_id, State.order(:name), :id, :name, include_blank: true, id: 'state_select', disabled: true %>
   </div>
 
   <div>
     <%= form.label :city_id, style: "display: block" %>
-    <%= form.text_field :city_id %>
+    <%= form.collection_select :city_id, City.order(:name), :id, :name, include_blank: true, id: 'city_select', disabled: true %>
   </div>
 
   <div>
