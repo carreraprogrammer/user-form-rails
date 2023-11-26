@@ -10,8 +10,8 @@ class CitiesController < ApplicationController
   end
 
   def show
-    @city = City.find(params[:id])
-    @users = @city.users
+    @city = City.includes(users: [{city: [{state: :country}]}, :gender]).find(params[:id])
+
     respond_to do |format|
       format.html
       format.pdf do

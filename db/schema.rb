@@ -52,20 +52,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_25_225503) do
     t.string "house_or_apartment"
     t.bigint "gender_id", null: false
     t.bigint "city_id", null: false
-    t.bigint "country_id", null: false
-    t.bigint "state_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["city_id"], name: "index_users_on_city_id"
-    t.index ["country_id"], name: "index_users_on_country_id"
     t.index ["gender_id"], name: "index_users_on_gender_id"
-    t.index ["state_id"], name: "index_users_on_state_id"
   end
 
   add_foreign_key "cities", "states"
   add_foreign_key "states", "countries"
   add_foreign_key "users", "cities"
-  add_foreign_key "users", "countries"
   add_foreign_key "users", "genders"
-  add_foreign_key "users", "states"
 end

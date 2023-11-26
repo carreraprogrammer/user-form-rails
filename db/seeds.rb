@@ -33,15 +33,13 @@ city = City.find_by(name: 'Medellín')
 3.times do |i|
   User.create!(
     first_name: "User",
-    last_name: "#{i + 1}",
+    last_name: "Doe",
     birth_date: "1990-01-01",
     email: "user#{i + 1}@example.com",
     address: "Address #{i + 1}",
     house_or_apartment: "House",
     gender: Gender.first,
     city: city,
-    country: colombia,
-    state: State.find_by(name: 'Antioquia')
   )
 end
 

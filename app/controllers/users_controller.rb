@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    @users = User.includes(:city, :state, :country, :gender)
+    @users = User.includes(:gender, city: { state: :country })
+
     respond_to do |format|
       format.html
       format.pdf do
@@ -79,6 +80,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :birth_date, :email, :address, :house_or_apartment, :gender_id, :city_id, :country_id, :state_id)
+      params.require(:user).permit(:first_name, :last_name, :birth_date, :email, :address, :house_or_apartment, :gender_id, :city_id)
     end
 end
