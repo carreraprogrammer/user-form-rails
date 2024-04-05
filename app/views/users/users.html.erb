@@ -1,0 +1,28 @@
+<h1>Usuarios</h1>
+
+<p>
+  PDF generated
+  <%= Time.zone.now %>
+</p>
+
+<table class="user-info-table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Nacimiento</th>
+      <th>Email</th>
+      <th>Dirección</th>
+      <th>Casa/Apartamento</th>
+      <th>Sexo</th>
+      <th>Ciudad</th>
+      <th>Pais</th>
+      <th>Departamento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <%= render 'user_pdf', user: user %>
+    <% end %>
+  </tbody>
+</table>

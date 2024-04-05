@@ -1,0 +1,99 @@
+
+<%= form_with(model: user, html: { class: "add-user-form" }) do |form| %>
+<h1 class="form-title"> CONTACTO </h1>
+  <div class="form-group">
+    <%= form.text_field :first_name, class: "form-control", placeholder: "Nombre*" %>
+    <% if user.errors[:first_name].any? %>
+      <div class="error-message">
+        <%= user.errors[:first_name].first %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :last_name, class: "form-control", placeholder: "Apellido*" %>
+    <% if user.errors[:last_name].any? %>
+      <div class="error-message">
+        <%= user.errors[:last_name].first %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.date_field :birth_date, class: "form-control",  id: "date_of_birth_select", placeholder: "Fecha de Nacimiento*" %>
+    <% if user.errors[:birth_date].any? %>
+      <div class="error-message">
+        <%= user.errors[:birth_date].first %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :email, class: "form-control", placeholder: "Correo Electrónico*" %>
+    <% if user.errors[:email].any? %>
+      <div class="error-message">
+        <%= user.errors[:email].first %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.collection_select :gender_id, Gender.order(:description), :id, :description, { include_blank: "Género*" }, { class: "form-control", id: "gender_select" } %>
+    <% if user.errors[:gender_id].any? %>
+      <div class="error-message">
+        <%= user.errors[:gender_id].first %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :address, class: "form-control", placeholder: "Dirección*" %>
+    <% if user.errors[:address].any? %>
+      <div class="error-message">
+        <%= user.errors[:address].first %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :house_or_apartment, class: "form-control", placeholder: "Casa o Apartamento*" %>
+    <% if user.errors[:house_or_apartment].any? %>
+      <div class="error-message">
+        <%= user.errors[:house_or_apartment].first %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.collection_select :country_id, Country.order(:name), :id, :name, { include_blank: "País*" }, { class: "form-control", id: 'country_select' } %>
+    <% if user.errors[:country_id].any? %>
+      <div class="error-message">
+        <%= user.errors[:country_id].first %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.collection_select :state_id, State.order(:name), :id, :name, { include_blank: "Estado/Provincia*" }, { class: "form-control", id: 'state_select' } %>
+    <% if user.errors[:state_id].any? %>
+      <div class="error-message">
+        <%= user.errors[:state_id].first %>
+      </div>
+    <% end %>
+  </div>
+
+    <div class="form-group">
+    <%= form.collection_select :city_id, City.order(:name), :id, :name, { include_blank: "Ciudad*" }, { class: "form-control", id: 'city_select'} %>
+    <% if user.errors[:city].any? || user.errors[:city_id].any? %>
+      <div class="error-message">
+        <%= user.errors[:city].first %>
+        <%= user.errors[:city_id].first %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-group btn-container">
+    <%= form.submit "Registrar", class: "btn btn-primary" %>
+  </div>
+
+<% end %>

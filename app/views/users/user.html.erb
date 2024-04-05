@@ -1,0 +1,25 @@
+<h1><%= @user.first_name + ' ' + @user.last_name %></h1>
+<p>
+  PDF generated
+  <%= Time.zone.now %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Nacimiento</th>
+      <th>Email</th>
+      <th>Dirección</th>
+      <th>Casa/Apartamento</th>
+      <th>Sexo</th>
+      <th>Ciudad</th>
+      <th>Pais</th>
+      <th>Departamento</th>
+    </tr>
+  </thead>
+  <tr>
+    <%= render 'user_pdf', user: @user %>
+  </tr>
+</table>
